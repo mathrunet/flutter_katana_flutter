@@ -2,7 +2,7 @@
 
 /// This package contains utility classes such as the Masamune package.
 ///
-/// To use, import `package:katana/katana.dart`.
+/// To use, import `package:katana_flutter/katana_flutter.dart`.
 ///
 /// [mathru.net]: https://mathru.net
 /// [YouTube]: https://www.youtube.com/c/mathrunetchannel
