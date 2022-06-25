@@ -50,6 +50,7 @@ class Localize {
     _locale = locale;
     _language = locale.split("_").first;
     __document = _collection[language];
+    Prefs.set("locale://".toSHA1(), _locale);
   }
 
   static String _locale = "";
@@ -144,7 +145,7 @@ class Localize {
       return;
     }
     if (locale.isEmpty) {
-      _locale = deviceLocale;
+      _locale = Prefs.getString("locale://".toSHA1(), deviceLocale);
       if (_locale.isEmpty) {
         _locale = "en_US";
       }
@@ -152,6 +153,7 @@ class Localize {
       _language = _locale.split("_").first;
     } else {
       _locale = locale!;
+      Prefs.set("locale://".toSHA1(), _locale);
       initializeDateFormatting(locale);
       _language = _locale.split("_").first;
     }
