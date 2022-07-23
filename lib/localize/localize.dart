@@ -145,7 +145,9 @@ class Localize {
       return;
     }
     if (locale.isEmpty) {
-      _locale = Prefs.getString("locale://".toSHA1(), deviceLocale);
+      _locale = Config.isMobile
+          ? deviceLocale
+          : Prefs.getString("locale://".toSHA1(), deviceLocale);
       if (_locale.isEmpty) {
         _locale = "en_US";
       }
